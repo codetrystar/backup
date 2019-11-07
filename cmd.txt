@@ -1,0 +1,15 @@
+1. netstat -aon|findstr "49157"
+    查看被占用端口对应的PID，输入命令：
+    netstat -aon|findstr "49157",
+    回车，记下最后一位数字，即PID
+
+
+2. tasklist|findstr "2720"
+    继续输入tasklist|findstr "2720"，回车，
+    查看是哪个进程或者程序占用了2720端口，
+    结果是：svchost.exe 
+
+3. taskkill /f /t /im svchost.exe
+    结束该进程：在任务管理器中选中该进程点击”结束进程“按钮，
+    或者是在cmd的命令窗口中输入：
+    taskkill /f /t /im svchost.exe
